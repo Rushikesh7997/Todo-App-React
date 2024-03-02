@@ -7,7 +7,7 @@ import { EditNote } from "./pages/EditNote";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes'))||[]);
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
