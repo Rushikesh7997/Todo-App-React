@@ -8,6 +8,14 @@ export const EditNote = ({ notes, setNotes }) => {
   const note = notes.find((item) => item.id == id);
   const [title, setTitle] = useState(note.title);
   const [details, setDetails] = useState(note.details);
+
+  const handleForm = (e) => {
+    e.preventDefault();
+
+    if (title && details) {
+      const newNote = { ...note,title,details};
+    }
+  };
   return (
     <section>
       <header className="create-note__header">
