@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { BsPlusLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -10,6 +10,18 @@ export const Notes = ({ notes }) => {
   const [text, setText] = useState("");
   const [filterNotes, setFilterNotes] = useState(notes);
 
+  const handleSearch = () => {
+    setFilterNotes(
+      notes.filter((note) => {
+        if (note.title.toLowerCase().match(text.toLocaleLowerCase())) {
+          return note;
+        }
+      })
+    );
+  };
+
+  useEffect(handleSearch, [text]);
+
   return (
     <section>
       <header className="notes__header">
@@ -18,7 +30,10 @@ export const Notes = ({ notes }) => {
           <input
             type="text"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => {
+              setText(e.target.value);
+              handleSearch();
+            }}
             autoFocus
             placeholder="Keyword..."
           />
