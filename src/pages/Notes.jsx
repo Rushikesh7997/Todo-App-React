@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { MdClose } from "react-icons/md";
 import { BsPlusLg } from "react-icons/bs";
 import { Link } from "react-router-dom";
 // import dummyNotes from "../dummy__notes";
@@ -42,10 +43,13 @@ export const Notes = ({ notes }) => {
           className="btn"
           onClick={() => setShowSearch((prevState) => !prevState)}
         >
-          <CiSearch />
+          {showSearch ? <MdClose /> : <CiSearch />}
         </button>
       </header>
       <div className="notes__container">
+        {filterNotes.length == 0 && (
+          <p className="empty__notes">No Notes Found</p>
+        )}
         {filterNotes.map((note) => (
           <NoteItem key={note.id} note={note} />
         ))}
