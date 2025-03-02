@@ -1,6 +1,6 @@
 # React Notes App
 
-**<a href="" target="_blank">Live Project Link</a>**
+**<a href="https://todo-app-react-4mpv.onrender.com/" target="_blank">Live Project Link</a>**
 
 This is a simple note-taking application built with React.js, CSS, and HTML. It allows users to create, edit, and delete notes.
 
@@ -46,12 +46,12 @@ This is a simple note-taking application built with React.js, CSS, and HTML. It 
 ## Usage
 
 1.  **Creating a Note:**
-    * Click the "Add Note" button.
+    * Click the "+" button.
     * Enter a title and content for your note.
     * Click the "Save" button to create the note.
 
 2.  **Editing a Note:**
-    * Click the "Edit" button on the note you want to edit.
+    * Click the note button on the note you want to edit.
     * Modify the title and content.
     * click the "Save" button to save changes.
 
