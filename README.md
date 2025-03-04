@@ -68,6 +68,3 @@ This is a simple note-taking application built with React.js, CSS, and HTML. It 
 * **Improved UI/UX:** Further refine the user interface and user experience.
 
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
